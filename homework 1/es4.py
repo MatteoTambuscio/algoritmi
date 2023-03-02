@@ -1,45 +1,28 @@
 # binary search
-# es 4
 
-def binarySearch(list):
-
-    l = len(list)
-    print(list)
-    if (len(list) == 1):
-        if (list[0] == number):
-            return "trovato"
-        else:
-            return "non trovato"
-
-    if ( l % 2 != 0):
-        cand = int(l/2) + 1
-        if (list[cand-1] == number):
-            return "trovato"
-        elif (list[cand-1] > number):
-            return binarySearch(list[0:cand-1])
-        elif (list[cand-1] < number):
-            return binarySearch(list[cand:])
+def binarySearch(lista, token, l, r):
+    if (r-l == 0):
+        return "non presente"
     
-    if ( l % 2 == 0):
-        cand = int(l/2) 
+    mid = (l+r) //2
+    print(mid)
+    if (lista[mid] == token):
+        return f"numero presente alla posizione {mid+1}"
+    elif token < lista[mid]:
+        return binarySearch(lista, token, l, mid)
+    else:
+        return binarySearch(lista,token, mid+1, r)
 
-        if (list[cand-1] == number):
-            return "trovato"
-        elif (list[cand-1] > number):
-            return  binarySearch(list[0:cand-1])
-        else:
-            return binarySearch(list[cand:])
 
     
-
-
-   
 if __name__ == '__main__':     
 
     lista = [i for i in range(1,100)] 
 
     number = int(input("che numero vuoi cercare?: "))
+
+    print(binarySearch(lista, number, 0, len(lista)))
     
-    print(f"il numero da te cercato si trova alla posizione: { binarySearch(lista)}")
+   
 
  
