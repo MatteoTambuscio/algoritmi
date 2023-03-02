@@ -1,8 +1,8 @@
 # Algoritmi
-## Automations 
-  This folder id dedicated to the program created during algoritmi course
+## General Informatino
+  
+In this repositary I will add every program created during algoritmi course.
 
+At the moment the program will be divided by Homework assignement
 
-
-## Templates
 
